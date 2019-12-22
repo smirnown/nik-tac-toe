@@ -23,6 +23,7 @@ class TicTacToe:
 
     @property
     def board_has_free_cells(self):
+        """True if there are cells on the board that haven't been used. Else False."""
         for row in self.board:
             if ' ' in row:
                 return True
@@ -33,7 +34,7 @@ class TicTacToe:
 
         :return: Empty board
         """
-        board = [_ for _ in range(self.game_size)]
+        board = [None] * self.game_size
         for row in range(self.game_size):
             board[row] = [" " for _ in range(self.game_size)]
         print(board)
@@ -59,7 +60,6 @@ class TicTacToe:
         self.board[move.row][move.column] = self.current_player
 
     def __check_if_game_is_over(self):
-        # TODO: Make sure game ends if all moves have been played, but no one has won
         self.__check_rows_for_win()
         self.__check_columns_for_win()
         self.__check_upper_left_to_lower_right_diagonal_for_win()
@@ -118,6 +118,7 @@ class TicTacToe:
             print(row)
 
 
+# pylint: disable=too-few-public-methods
 class Move:
     """A move in tic-tac-toe."""
 

@@ -2,5 +2,4 @@
 
 
 class CellInUseError(Exception):
-    pass
-
+    """Error raised when trying to overwrite an in-use cell."""
