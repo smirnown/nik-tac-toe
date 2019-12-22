@@ -1,3 +1,6 @@
+"""Functions that should live somewhere else, but I couldn't find a place for them."""
+
+
 # TODO: Find a better way to implement this code than helper functions
 from tic_tac_toe import TicTacToe, Move
 import errors
@@ -37,7 +40,11 @@ def pick_move_to_make():
 
 
 def execute_turn(game, move):
-    """"""
+    """Player get to make a move, if it is legal.
+
+    :param TicTacToe game: The game of tic-tac-toe being played
+    :param Move move: The move the current player is attempting to make
+    """
     try:
         game.execute_turn(move)
     except IndexError:
