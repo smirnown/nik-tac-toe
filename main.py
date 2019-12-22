@@ -5,9 +5,9 @@ from helpers import (
 )
 
 game = create_game()
-while not game.is_over:
+while not game.winner:
     move = pick_move_to_make()
     execute_turn(game, move)
     game.display_board()
 
-print('Congratulations! The player playing {}s wins!'.format(game.current_move_marker))
+print('Congratulations! {}s wins!'.format(game.winner))
